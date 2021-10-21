@@ -2,6 +2,14 @@
 
 This is a sample application for an issue described at https://github.com/microsoft/XamlBehaviorsWpf/issues/93 
 
+To simulate the issue:
+- Start the application
+- Enter an 8 digit code (using the numpad of your keyboard)
+- Click go back
+- Enter a code again, => each Digit is now registered twice
+- ... repeat
+- ... => each Digit is registered trice,
+
 Some key things to note
 - The sample is a simplification of the real application so let's not discuss setting the application up differently 
 - The only reference is XamlBehaviorsWpf
