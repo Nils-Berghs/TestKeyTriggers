@@ -10,18 +10,23 @@ namespace TestKeyTriggers.ViewModels
 {
     public class ViewModelA:ViewModelBase
     {
-        private string _Code;
-        public string Code
+        private MainViewModel MainViewModel { get; }
+
+        public CodeViewModel CodeViewModel { get; }
+
+        public ViewModelA(MainViewModel mainViewModel)
         {
-            get => _Code;
-            set => SetProperty(ref _Code, value);
+            CodeViewModel = new CodeViewModel();
+
+            CodeViewModel.CodeEntered += CodeViewModel_CodeEntered;
+            MainViewModel = mainViewModel;
+            
         }
 
-        public ICommand HandleKeyCommand { get; }
-
-        public ViewModelA()
+        private void CodeViewModel_CodeEntered(object sender, EventArgs e)
         {
-            HandleKeyCommand = new RelayCommand<KeyEventArgs>(e => HandleKeyPress)
+            MainViewModel.PushViewModel(new ViewModelB(MainViewModel));
         }
+
     }
 }

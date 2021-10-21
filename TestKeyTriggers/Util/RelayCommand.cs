@@ -55,7 +55,7 @@ namespace TestKeyTriggers.Util
     /// A RelayCommand Implementation  without a parameter,
     /// 
     /// </summary>
-    public class RelayCommand 
+    public class RelayCommand: ICommand
     {
         private readonly Action Action;
         private readonly Func<bool> Predicate;

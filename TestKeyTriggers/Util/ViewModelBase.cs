@@ -49,3 +49,4 @@ namespace TestKeyTriggers.Util
             return false;
         }
     }
+}

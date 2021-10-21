@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="TestKeyTriggers.UserControls.CodeUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:b="http://schemas.microsoft.com/xaml/behaviors" 
+             xmlns:viewmodels="clr-namespace:TestKeyTriggers.ViewModels" 
+             d:DataContext="{d:DesignInstance Type=viewmodels:ViewModelA}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <b:Interaction.Triggers>
+        <b:KeyTrigger Key="NumPad0" FiredOn="KeyDown">
+            <b:InvokeCommandAction Command="{Binding KeyPressedCommand}" PassEventArgsToCommand="True"/>
+        </b:KeyTrigger>
+        <b:KeyTrigger Key="NumPad1" FiredOn="KeyDown">
+            <b:InvokeCommandAction Command="{Binding KeyPressedCommand}" PassEventArgsToCommand="True"/>
+        </b:KeyTrigger>
+        <b:KeyTrigger Key="NumPad2" FiredOn="KeyDown">
+            <b:InvokeCommandAction Command="{Binding KeyPressedCommand}" PassEventArgsToCommand="True"/>
+        </b:KeyTrigger>
+        <b:KeyTrigger Key="NumPad3" FiredOn="KeyDown">
+            <b:InvokeCommandAction Command="{Binding KeyPressedCommand}" PassEventArgsToCommand="True"/>
+        </b:KeyTrigger>
+        <b:KeyTrigger Key="NumPad4" FiredOn="KeyDown">
+            <b:InvokeCommandAction Command="{Binding KeyPressedCommand}" PassEventArgsToCommand="True"/>
+        </b:KeyTrigger>
+        <b:KeyTrigger Key="NumPad5" FiredOn="KeyDown">
+            <b:InvokeCommandAction Command="{Binding KeyPressedCommand}" PassEventArgsToCommand="True"/>
+        </b:KeyTrigger>
+        <b:KeyTrigger Key="NumPad6" FiredOn="KeyDown">
+            <b:InvokeCommandAction Command="{Binding KeyPressedCommand}" PassEventArgsToCommand="True"/>
+        </b:KeyTrigger>
+        <b:KeyTrigger Key="NumPad7" FiredOn="KeyDown">
+            <b:InvokeCommandAction Command="{Binding KeyPressedCommand}" PassEventArgsToCommand="True"/>
+        </b:KeyTrigger>
+        <b:KeyTrigger Key="NumPad8" FiredOn="KeyDown">
+            <b:InvokeCommandAction Command="{Binding KeyPressedCommand}" PassEventArgsToCommand="True"/>
+        </b:KeyTrigger>
+        <b:KeyTrigger Key="NumPad9" FiredOn="KeyDown">
+            <b:InvokeCommandAction Command="{Binding KeyPressedCommand}" PassEventArgsToCommand="True"/>
+        </b:KeyTrigger>
+    </b:Interaction.Triggers>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="1" Text="Enter code" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="2" Text="{Binding Code}" HorizontalAlignment="Center"/>
+    </Grid>
+</UserControl>
